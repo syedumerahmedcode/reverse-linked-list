@@ -22,5 +22,29 @@ public class App {
          * Output: []
          */
         System.out.println("Hello, World!");
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+
+        Solution solution = new Solution();
+        ListNode result = solution.reverseList(head);
+
+        System.out.println("The original given linked list is: ");
+        printList(head);
+
+        System.out.println("The reversed linked list is: ");
+        printList(result);
+
+    }
+
+    public static void printList(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.val + " ");
+            current = current.next;
+        }
+        System.out.println();
     }
 }
